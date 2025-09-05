@@ -1,3 +1,7 @@
+import NewProject from "./components/NewProject";
+import NoProjectSelected from "./components/NoProjectSelected";
+import ProjectsSidebar from "./components/ProjectsSidebar";
+
 function App() {
   return (
     <>
@@ -6,7 +10,11 @@ function App() {
         <h2>ac</h2>
         <p>t</p>
       </header>
-      <main></main>
+      <main>
+        <ProjectsSidebar />
+        <NewProject />
+        <NoProjectSelected />
+      </main>
     </>
   );
 }
