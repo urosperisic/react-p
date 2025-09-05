@@ -1,3 +1,4 @@
+import Button from "./Button";
 import Input from "./Input";
 
 export default function NewProject() {
@@ -5,10 +6,10 @@ export default function NewProject() {
     <div style={{ backgroundColor: "lightcoral", padding: "1%" }}>
       <menu>
         <li>
-          <button>Cancel</button>
+          <Button>Cancel</Button>
         </li>
         <li>
-          <button>Save</button>
+          <Button>Create new project</Button>
         </li>
       </menu>
       <div>
