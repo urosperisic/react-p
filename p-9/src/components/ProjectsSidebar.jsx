@@ -1,11 +1,11 @@
 import Button from "./Button";
 
-export default function ProjectsSidebar() {
+export default function ProjectsSidebar({ onStartAddProject }) {
   return (
-    <aside>
+    <aside style={{ backgroundColor: "LightGoldenRodYellow", padding: "1%" }}>
       <h2>Your Projects</h2>
       <div>
-        <Button>+ Add Project</Button>
+        <Button onClick={onStartAddProject}>+ Add Project</Button>
       </div>
     </aside>
   );

@@ -3,7 +3,7 @@ import Input from "./Input";
 
 export default function NewProject() {
   return (
-    <div style={{ backgroundColor: "lightcoral", padding: "1%" }}>
+    <div style={{ backgroundColor: "LightSkyBlue", padding: "1%" }}>
       <menu>
         <li>
           <Button>Cancel</Button>
