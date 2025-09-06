@@ -1,7 +1,26 @@
+import { useRef } from "react";
 import Button from "./Button";
 import Input from "./Input";
 
-export default function NewProject() {
+export default function NewProject({ onAdd }) {
+  const title = useRef();
+  const description = useRef();
+  const dueDate = useRef();
+
+  function handleSave() {
+    const enteredTitle = title.current.value;
+    const enteredDescription = description.current.value;
+    const enteredDueDate = dueDate.current.value;
+
+    // validation...
+
+    onAdd({
+      title: enteredTitle,
+      description: enteredDescription,
+      dueDate: enteredDueDate,
+    });
+  }
+
   return (
     <div style={{ backgroundColor: "LightSkyBlue", padding: "1%" }}>
       <menu>
@@ -9,13 +28,13 @@ export default function NewProject() {
           <Button>Cancel</Button>
         </li>
         <li>
-          <Button>Create new project</Button>
+          <Button onClick={handleSave}>Save</Button>
         </li>
       </menu>
       <div>
-        <Input label="Title" />
-        <Input label="Description" textarea />
-        <Input label="Due Date" />
+        <Input type="text" ref={title} label="Title" />
+        <Input ref={description} label="Description" textarea />
+        <Input type="date" ref={dueDate} label="Due Date" />
       </div>
     </div>
   );

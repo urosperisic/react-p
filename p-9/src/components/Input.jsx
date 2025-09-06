@@ -1,6 +1,9 @@
-import { useId } from "react";
+import { useId, forwardRef } from "react";
 
-export default function Input({ label, textarea, id, ...props }) {
+const Input = forwardRef(function Input(
+  { label, textarea, id, ...props },
+  ref
+) {
   const generatedId = useId();
   const inputId = id || generatedId;
 
@@ -13,10 +16,12 @@ export default function Input({ label, textarea, id, ...props }) {
     <p>
       <label htmlFor={inputId}>{label}</label>
       {textarea ? (
-        <textarea id={inputId} {...props} style={styles} />
+        <textarea ref={ref} id={inputId} {...props} style={styles} />
       ) : (
-        <input id={inputId} {...props} style={styles} />
+        <input ref={ref} id={inputId} {...props} style={styles} />
       )}
     </p>
   );
-}
+});
+
+export default Input;
