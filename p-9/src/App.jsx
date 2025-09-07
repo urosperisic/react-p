@@ -20,18 +20,20 @@ function App() {
 
   function handleAddProject(projectData) {
     setProjectsState((prevState) => {
+      const projectId = Math.random();
       const newProject = {
         ...projectData,
-        id: Math.random(),
+        id: projectId,
       };
       return {
         ...prevState,
+        selectedProjectId: undefined,
         projects: [...prevState.projects, newProject],
       };
     });
   }
 
-  console.log(projectsState);
+  // console.log(projectsState);
 
   let content;
 
@@ -43,12 +45,13 @@ function App() {
   return (
     <>
       <header>
-        <h1>re</h1>
-        <h2>ac</h2>
-        <p>t</p>
+        <h1>R</h1>
       </header>
       <main>
-        <ProjectsSidebar onStartAddProject={handleStartAddProject} />
+        <ProjectsSidebar
+          onStartAddProject={handleStartAddProject}
+          projects={projectsState.projects}
+        />
         {content}
       </main>
     </>
