@@ -53,6 +53,9 @@ p {
   padding: 0 0 1rem 0;
   line-height: 2.7rem;
 }
+span {
+  font-size: 1.4rem;
+}
 
 button {
   padding: 1rem 5rem;

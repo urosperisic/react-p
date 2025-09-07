@@ -1,6 +1,12 @@
 import Tasks from "./Tasks";
 
-export default function SelectedProject({ project, onDelete }) {
+export default function SelectedProject({
+  project,
+  onDelete,
+  onAddTask,
+  onDeleteTask,
+  tasks,
+}) {
   const styles = {
     border: "1px solid #000",
   };
@@ -20,7 +26,7 @@ export default function SelectedProject({ project, onDelete }) {
         <p>{formattedDate}</p>
         <p>{project.description}</p>
       </header>
-      <Tasks />
+      <Tasks onAdd={onAddTask} onDelete={onDeleteTask} tasks={tasks} />
     </div>
   );
 }
