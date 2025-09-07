@@ -1,4 +1,4 @@
-export default function SelectedProject({ project }) {
+export default function SelectedProject({ project, onDelete }) {
   const styles = {
     border: "1px solid #000",
   };
@@ -13,7 +13,7 @@ export default function SelectedProject({ project }) {
       <header>
         <div>
           <h1>{project.title}</h1>
-          <button>Delete</button>
+          <button onClick={onDelete}>Delete</button>
         </div>
         <p>{formattedDate}</p>
         <p>{project.description}</p>
