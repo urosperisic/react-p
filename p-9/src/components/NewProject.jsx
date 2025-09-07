@@ -3,7 +3,7 @@ import Button from "./Button";
 import Input from "./Input";
 import Modal from "./Modal";
 
-export default function NewProject({ onAdd }) {
+export default function NewProject({ onAdd, onCancel }) {
   const modal = useRef();
 
   const title = useRef();
@@ -41,7 +41,7 @@ export default function NewProject({ onAdd }) {
       <div style={{ backgroundColor: "LightSkyBlue", padding: "1%" }}>
         <menu>
           <li>
-            <Button>Cancel</Button>
+            <Button onClick={onCancel}>Cancel</Button>
           </li>
           <li>
             <Button onClick={handleSave}>Save</Button>
